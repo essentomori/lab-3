@@ -27,11 +27,16 @@ int main() {
         std::cout << "\nTranspose of A:" << std::endl;
         print_matrix(E);
 
+        Matrix F = matrix_vstack(A, B);
+        std::cout << "\nVertical joining of matrices A and B:" << std::endl;
+        print_matrix(F);
+
         free_matrix(A);
         free_matrix(B);
         free_matrix(C);
         free_matrix(D);
         free_matrix(E);
+        free_matrix(F);
 
         std::cout << "\nAll operations completed successfully!" << std::endl;
 
