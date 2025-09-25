@@ -1,0 +1,13 @@
+build/
+
+docs/html/
+docs/latex/
+
+*.exe
+*.out
+
+*.o
+*.a
+
+Doxyfile.bak
+*.bak
