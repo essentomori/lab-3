@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # lab-3
 
 participants:
@@ -6,3 +7,6 @@ participants:
 Попович Е
 Стрижов Т
 Алексеев В
+=======
+# AVAstarset
+>>>>>>> 1
