@@ -2,9 +2,9 @@
 #include <iostream>
 #include <stdexcept>
 
-Matrix create_matrix(int rows, int cols) {
+Matrix create_game_board(int rows, int cols,int default_value) {
     if (rows <= 0 || cols <= 0) {
-        throw std::invalid_argument("Matrix dimensions must be positive");
+        throw std::invalid_argument("Game board dimensions must be positive");
     }
     Matrix mat;
     mat.rows = rows;
@@ -23,6 +23,7 @@ void free_matrix(Matrix m) {
     }
     delete[] m.data;
 }
+
 void print_matrix(Matrix m) {
     if (m.data == nullptr) {
         std::cout << "[Empty matrix]" << std::endl;
@@ -37,7 +38,7 @@ void print_matrix(Matrix m) {
         std::cout << "]" << std::endl;
     }
 }
-
+/*
 Matrix matrix_add(Matrix a, Matrix b) {
     if (a.rows != b.rows || a.cols != b.cols) {
         throw std::invalid_argument("Matrix dimensions must match for addition");
@@ -86,32 +87,4 @@ Matrix matrix_from_array(double* data, int rows, int cols) {
     }
     return result;
 }
-Matrix matrix_vstack(Matrix a, Matrix b) {
-    if (a.data == nullptr || b.data == nullptr) {
-        throw std::invalid_argument("Cannot stack empty matrices");
-    }
-
-    if (a.cols != b.cols) {
-        throw std::invalid_argument("Number of columns must match for vertical stacking");
-    }
-
-    if (a.rows == 0 || a.cols == 0 || b.rows == 0 || b.cols == 0) {
-        throw std::invalid_argument("Matrix dimensions must be positive");
-    }
-
-    Matrix result = create_matrix(a.rows + b.rows, a.cols);
-
-    for (int i = 0; i < a.rows; i++) {
-        for (int j = 0; j < a.cols; j++) {
-            result.data[i][j] = a.data[i][j];
-        }
-    }
-
-    for (int i = 0; i < b.rows; i++) {
-        for (int j = 0; j < b.cols; j++) {
-            result.data[a.rows + i][j] = b.data[i][j];
-        }
-    }
-
-    return result;
-}
+*/
